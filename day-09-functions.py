@@ -1,5 +1,9 @@
 import requests
 from bs4 import BeautifulSoup
+import time
+
+# t1=time.monotonic()
+# keyword='코로나'
 
 keyword = input("뉴스 검색어를 입력하세요 > ")
 count=0
@@ -33,9 +37,15 @@ def getDates():
 
   return dates
 
+final_titles=getTitles()
+final_dates=getDates()
+
 if len(getTitles())==0:
   print(f"'{keyword}'에 대한 검색결과가 없습니다.")
 else:
   for i in range(len(getTitles())):
     count += 1
-    print(f"{count} - [ {getDates()[i]} ] {getTitles()[i]}")
+    print(f"{count} - [ {final_dates[i]} ] {final_titles[i]}")
+
+# t2 = time.monotonic()
+# print(f"diff:{t2-t1}")
