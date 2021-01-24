@@ -1,5 +1,9 @@
 import requests
 from bs4 import BeautifulSoup
+import time
+
+# t1=time.monotonic()
+# keyword='코로나'
 
 print("<< 한국경제 최근 기사 검색 >>")
 terminate="exit"
@@ -43,3 +47,6 @@ while True:
 
   print()
 
+# t2 = time.monotonic()
+# print(f"diff:{t2-t1}")
+# 검색어 코로나로 프로그램 실행시 평균 0.9초
